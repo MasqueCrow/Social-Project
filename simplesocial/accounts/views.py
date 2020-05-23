@@ -5,7 +5,7 @@ from django.views.generic import CreateView
 from accounts import forms
 # Create your views here.
 class SignUp(CreateView):
-    form_class = forms.UserCreationForm
+    form_class = forms.UserCreateForm
     #Once user has successfully submit their sign up form
     #redirect user to login page
     success_url = reverse_lazy('login')
