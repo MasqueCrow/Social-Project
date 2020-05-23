@@ -15,11 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from simplesocial.views import HomePage
+from simplesocial import views
 
 urlpatterns = [
-    path('',HomePage.as_view(),name='home'),
+    path('',views.HomePage.as_view(),name='home'),
     path('admin/', admin.site.urls),
     path('accounts/',include('accounts.urls',namespace='accounts')),
     path('accounts/',include('django.contrib.auth.urls')),
+    path('test/',views.TestPage.as_view(),name='test'),
+    path('thanks/',views.ThanksPage.as_view(),name='thanks')
 ]
